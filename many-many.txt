@@ -1,0 +1,5 @@
+1) Users-artists
+2) Search-track
+3) Search-album
+4) Search-artist
+5) History-track
