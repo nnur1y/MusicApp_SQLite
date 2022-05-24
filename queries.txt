@@ -1,0 +1,46 @@
+# query
+SELECT Genre.genre_name, Track.track_name FROM Genre INNER JOIN Track on Genre.GenreID=Track.genre_id;
+SELECT Track.track_name, Track.image, ( (Track.duration/60000 ) || ':' || ((Track.duration - (Track.duration/60000) ) /10000)  )as "time" FROM Track 
+
+Update Advertiser Set price = duration * 30 Where price is NULL
+
+# subquery
+--TOP_3 genre
+SELECT GenreID, genre_name, count
+FROM Genre
+WHERE count IN (
+ SELECT count
+        FROM Genre
+        Order By count Desc Limit 3
+    )
+ORDER BY GenreID;
+
+--TOP_3 track
+SELECT track_id, track_name, count
+FROM Track
+WHERE count IN (
+ SELECT count
+        FROM Track
+        ORDER by count desc 
+  LIMIT 3)
+ORDER BY track_id;
+
+# view
+CREATE VIEW music_details
+as
+SELECT 
+Track.track_id "ID",
+Track.track_name "Music",
+Artist.name "Artist",
+Genre.genre_name "Genre",
+Company.producer "Producer",
+Track.duration "Duration",
+Album.Title "Album",
+Album.year "Year",
+Track.image "Image"
+From Track Join Artist, Genre, Company, Album
+ON
+Track.genre_id = Genre.GenreID 
+AND Track.album_id = Album.AlbumId 
+AND Album.artist_id = Artist.ArtistId 
+AND Artist.company_id = Company.company_id
