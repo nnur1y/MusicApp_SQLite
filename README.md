@@ -38,5 +38,6 @@ Pages in the application:
 
 
 ## mockup
+https://miro.com/app/board/uXjVOZ_HM2E=/?invite_link_id=86628612241
 ![16carats](https://user-images.githubusercontent.com/90897901/147088242-19387922-bd11-4592-96f1-4473b9aa4e49.jpg)
 
